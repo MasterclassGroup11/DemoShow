@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluid</title>
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="theme/bootstrap.min.css" rel="stylesheet" />
+    <link href="theme/Fluid.css" rel="stylesheet" />
+    <link href="theme/card.css" rel="stylesheet" />
+    <link href="theme/footer.css" rel="stylesheet" />
+  </head>
+  <body style="background-color: #772953;">
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+          >
+            <img src="./img/logo.png" width="40" height="32" />
+          </a>
+
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="#" class="nav-link px-2 text-secondary text-big"
+                ><strong></strong
+              ></a>
+            </li>
+            <li>
+              <a href="/whitepaper.html" class="nav-link px-2 text-white"
+                >White Paper</a
+              >
+            </li>
+            <li><a href="#" class="nav-link px-2 text-white">Farming</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Team</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Community</a></li>
+          </ul>
+
+          <div class="text-end">
+           
+            <button type="button" class="btn btn-warning">
+              <strong><a data-connected-text="Wallet Connected" id="l-connect-wallet-btn"
+                 class="nav-link btn-gray ml-xl-5 l-connect-wallet-btn text-dark" href="#">Connect Wallet</a></strong>
+            </button>
+          </div>
+          
+          </div>
+          
+        </div>
+      </div>
+    </header>
+
+    <!-- Jumbotron -->
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="container-Fluid py-5">
+            <h1 class="display-5 fw-bold">FARMING</h1>
+            <p class="col-md-8 fs-4">
+              Liquidity provider rewards Liquidity providers earn a 30% fee on
+              all trades proportional to their share of the pool. Fees are added
+              to the pool, accrue in real time and can be claimed by withdrawing
+              your liquidity.
+            </p>
+            <button class="btn btn-primary btn-lg" type="button">
+              Buy Fluid Token
+            </button>
+            <button class="btn btn-dark btn-lg" type="button">
+              Farm Fluid Token
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div
+            class="card bg-dark text-light"
+            style="width: 18rem; border-radius: 20px"
+          >
+            <div class="card-body">
+              <h1 class="card-title">Summary</h1>
+              <h4><strong>Price</strong> $0.02123</h4>
+              <h4 class="mt-3">
+                <strong>Fluid In Circulation</strong> 1,000,000
+              </h4>
+              <h4><strong>Total supply</strong> 150,000,000</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray pt-xl-5">
+      <div class="container" id="farming">
+        <h1 class="text-dark font-60">FARMING</h1>
+        <div class="row">
+            <div class="col-lg-4 pt-5 text-center">
+                <a target="_blank" class="btn-blue" href="https://app.uniswap.org/#/add/0x692eb773e0b5b7a79efac5a015c8b36a2577f65c/BNB">Fluid – BNB</a>
+                <div class="py-5">
+                    <a target="_blank" href="https://app.uniswap.org/#/add/0x692eb773e0b5b7a79efac5a015c8b36a2577f65c/BNB" class="btn-w">Actual APY : <span class="l-BNB-apy">412.79</span>%</a>
+                </div>
+                <div class="box-2">
+                    <h5 class="text-left pl-4">Deposit Fluid–BNB LP
+                    </h5>
+                    <p class="">(Balance: <span id="l-token-balance">...</span> LP)</p>
+
+                    <div class="pb-4">
+                        <div class="time">
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <input id="l-deposit-input" type="text" name="Name" class="input" placeholder="" value="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-blue">
+                                        <button id="l-stake-btn" class="btn-blue2">DEPOSIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-left pl-4">Withdraw Fluid–BNB LP</h5>
+                    <div class="pb-4">
+                        <div class="time">
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <input id="l-withdraw-input" type="text" name="Name" class="input" placeholder="" value="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-blue">
+                                        <button id="l-unstake-btn" class="btn-blue2">WITHDRAW</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-left pl-4">Flow rewards</h5>
+                    <div class="pb-4">
+                        <div class="time">
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <input type="text" id="l-pending-divs" name="Name" disabled="" class="input" placeholder="" value="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-blue">
+                                        <button id="l-claim-btn" class="btn-blue2">CLAIM</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 2nd Dev -->
+            <div class="col-lg-4 pt-5 text-center">
+                <a target="_blank" href="https:0x95ba34760ac3d7fbe98ee8b2ab33b4f1a6d18878" class="btn-blue">Fluid – BNB</a>
+                <div class="py-5">
+                  <a target="_blank" href="https://app.uniswap.org/#/add/0x692eb773e0b5b7a79efac5a015c8b36a2577f65c/0x95ba34760ac3d7fbe98ee8b2ab33b4f1a6d18878" class="btn-w">Actual APY : <span class="l-desh-apy">2004.47</span>%</a>
+              </div>
+                <div class="box-2">
+                    <h5 class="text-left pl-4">Deposit Fluid–FLOW LP</h5>
+                    <p class="">(Balance: <span id="l-desh-token-balance">...</span> LP)</p>
+                    <div class="pb-4">
+                        <div class="time">
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <input id="l-desh-deposit-input" type="text" name="Name" class="input" placeholder="" value="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-blue">
+                                        <button id="l-desh-stake-btn" class="btn-blue2">DEPOSIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-left pl-4">Withdraw Fluid–FLOW LP</h5>
+                    <div class="pb-4">
+                        <div class="time">
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <input id="l-desh-withdraw-input" type="text" name="Name" class="input" placeholder="" value="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-blue">
+                                        <button id="l-desh-unstake-btn" class="btn-blue2">WITHDRAW</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-left pl-4">Flow rewards</h5>
+                    <div class="pb-4">
+                        <div class="time">
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <input id="l-desh-pending-divs" type="text" name="Name" class="input" placeholder="" disabled="" value="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-blue">
+                                        <button id="l-desh-claim-btn" class="btn-blue2">CLAIM</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 3rd div -->
+            <div class="col-lg-4 pt-5 text-center">
+                <a data-connected-text="Connected" href="#" class="btn-blue l-connect-wallet-btn">Connect Wallet</a>
+                <div class="py-5">
+                    <a href="#" class="btn-blue">MY SUMMARY</a>
+                </div>
+                <div class="box-blue text-white text-left px-xl-5 px-4">
+                    <div class="row pt-3">
+                        <div class="pl-0 col-7 pr-0">
+                            <h6>Staked BNB LP</h6>
+                        </div>
+                        <div class="col-5">
+                            <h6><span id="l-token-staked">...</span> <br>(<span id="l-share-percent">...</span>%)</h6>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="pl-0 col-7 pr-0">
+                            <h6>Staked FLUID LP</h6>
+                        </div>
+                        <div class="col-5 ">
+                            <h6><span id="l-desh-token-staked">...</span> <br>(<span id="l-desh-share-percent">...</span>%)</h6>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="pl-0 col-7">
+                            <h6>My total LP</h6>
+                        </div>
+                        <div class="col-5">
+                            <h6 id="l-total-lp">...</h6>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="pl-0 col-7 pr-0">
+                            <h6>FlOW claimable</h6>
+                        </div>
+                        <div class="col-5">
+                            <h6 id="l-Fluid-claimable">...</h6>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="pl-0 col-7 pr-0">
+                            <h6 class="">Appox. value of my FlOW rewards</h6>
+                        </div>
+                        <div class="col-5">
+                            <h6>$<span id="l-approx-usd-value">...</span></h6>
+                        </div>
+                    </div>
+                    <!-- <p>
+                        &nbsp;<br />
+                    </p> -->
+                    <div class="pt-3 text-center">
+                        <a id="l-exit-btn" href="#" class="btn-gray1">EXIT BNB POOL</a>
+                    </div>
+                    <div class="pt-2 text-center">
+                        <a id="l-desh-exit-btn" href="#" class="btn-gray1">EXIT BNB POOL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- About -->
+    <div class="pad mb-5">
+      <div class="container pt-5 text-white" id="about">
+        <div class="row">
+          <div class="col-lg-3 pt-4 text-white h-1">
+            <h1 class="text text-center text-lg-righ top-30">
+              ABOUT<br class="d-none d-lg-block" />
+              Fluid
+            </h1>
+          </div>
+          <div class="col-lg-9 text-center text-lg-left pt-5">
+            <div style="font-size: 3rem; margin-bottom: 2rem">
+              <span class="typed-words"
+                >Limited supply with infinite reward</span
+              ><span class="typed-cursor">|</span>
+            </div>
+            <div class="row text-center">
+              <div class="col-md-4">
+                <p class="big-number counter">28,199</p>
+                <p>Community Members <br />(all platforms)</p>
+              </div>
+              <div class="col-md-4">
+                <p class="big-number counter">79,000</p>
+                <p>Partners <br />Community</p>
+              </div>
+              <div class="col-md-4">
+                <p class="big-number counter">100,000</p>
+                <p>Market cap "$" <br />(at launching)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="container">
+      <!-- Team -->
+      <section id="team" class="pb-5">
+        <div class="container">
+          <h5 class="section-title h1">OUR TEAM</h5>
+          <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                <div class="mainflip flip-0">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class="img-Fluid"
+                            src="./img/tansu.png"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Yvonne Tansu</h4>
+                        <p class="card-text">
+                          Software Developer, Student-Mathematical and Computer
+                          Science.
+                        </p>
+                        <p>Group Assignment: Github repo coordinator</p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Yvonne Tansu</h4>
+                        <p class="card-text">
+                          Software Developer, M.sc-Mechanical.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class="img-Fluid"
+                            src="./img/student2.jpg"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Oluseyi Ayinde</h4>
+                        <p class="card-text">
+                          I'm a software developer(Full-Stack/Blockchain).
+                        </p>
+                        <p>Group Assignment: UI/UX Developer</p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Oluseyi Ayinde</h4>
+                        <p class="card-text">
+                          'm a software developer(Full-Stack) with 8year of
+                          experience. I code using many languages, such as PHP,
+                          C#, Javascript(Angular Js, Vuejs, Nodejs).
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class="img-Fluid"
+                            src="./img/chuks.png"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Okechukwu Ndunaka</h4>
+                        <p class="card-text">
+                          Transport/Maritime Management Technology.
+                          Python,Html,Solidity,SAP,Blockchain
+                        </p>
+                        <p>Group Assignment: Project manager and group leader</p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Okechukwu Ndunaka</h4>
+                        <p class="card-text">
+                          Transport/Maritime Management Technology.
+                          Python,Html,Solidity,SAP,Blockchain
+                        </p>
+                        <p>Group Assignment: Project manager and group leader</p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class="img-Fluid"
+                            src="./img/abdul.png"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Abdulazeez Muhammad Salihu</h4>
+                        <p>Solidity,Java,
+                          Android, Html, Css</p>
+                        <p class="card-text">
+                          Group Assignment: Contract developer
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Abdulazeez Muhammad Salihu</h4>
+                        <p class="card-text">Java, Android, Html, Css,</p>
+                        <P></P>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class="img-Fluid"
+                            src="./img/jalex.png"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Jalekun Oladiji</h4>
+                        <p class="card-text">B.Tech Mech Engineer/Html,css, blockchain dev</p>
+                        <p>Group Assignment: Documentation Coordinator</p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Jalekun Oladiji</h4>
+                        <p class="card-text">  Documentation Coordinator(B.Tech Mech Engineer)/Html,css, blockchain dev.</p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class="img-Fluid"
+                            src="./img/karen.jpg"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Karen Jimmy</h4>
+                        <p class="card-text">Tach enthusiast who hijacks technological trends and maximizes them for
+                          business growth and development.
+                        </p>
+                        <p>Group Assignment: UX/UI</p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Karen Jimmy</h4>
+                        <p class="card-text">Tach enthusiast who hijacks technological trends and maximizes them for
+                          business growth and development.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+          </div>
+        </div>
+      </section>
+      <!-- Team -->
+    </div>
+
+    <!-- footer -->
+
+    <!-- footer2 -->
+    <footer id="footer" class="footerstc" style="background-color: #772953">
+      <div class="morequesti w-container">
+        <div class="div-block-15">
+          <h1 class="heading1 morequestionsheading">More questions?</h1>
+          <p class="paragraph1 questionsparagraph">
+            Check out our frequently asked questions and join Telegram to get a
+            live support!
+          </p>
+          <div class="questionbuttons">
+            <a
+              href="https://www.Fluidcoin.org/faq"
+              target="_blank"
+              class="button shadow questionbutton w-button"
+              >FAQ</a
+            >
+            <a
+              href="https://www.Fluidcoin.org/support"
+              target="_blank"
+              class="link-block telegramfooter w-inline-block"
+              ><img
+                src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5f3c4bff8f5b526e81f12029_telemain.svg"
+                width="36"
+                height="36"
+                alt=""
+                class="mainshadow"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footertext w-container">
+        <div class="mainholder">
+          <a
+            href="https://www.Fluidcoin.org"
+            target="_blank"
+            class="footer-logo-link w-inline-block"
+          ></a>
+          <div class="columns-24 w-row">
+            <div class="w-col w-col-3">
+              <div class="listholder">
+                <h2 class="heading-40">Information</h2>
+                <ul role="list" class="w-list-unstyled">
+                  <li class="footerlistitem">
+                    <a
+                      href="https://Fluidcoin.medium.com/"
+                      target="_blank"
+                      class="footerlink"
+                      >Announcement</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/whitepaper"
+                      target="_blank"
+                      class="footerlink"
+                      >Whitepaper</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://docs.Fluidcoin.org/"
+                      target="_blank"
+                      class="footerlink"
+                      >Full Documentation</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/terms-of-use"
+                      target="_blank"
+                      class="footerlink"
+                      >FluidTerms of Use</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/careers"
+                      target="_blank"
+                      class="footerlink"
+                      >Careers</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="column-64 w-col w-col-3">
+              <div class="listholder">
+                <h2 class="heading-40">Ecosystem</h2>
+                <ul role="list" class="w-list-unstyled">
+                  <li class="footerlistitem">
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="footerlink"
+                      >Fluid Exchange</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="footerlink"
+                      >Job Search</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="footerlink"
+                      >Fluid Terminal</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a href="education.html" target="_blank" class="footerlink"
+                      >FluidEducation</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/voting"
+                      target="_blank"
+                      class="footerlink"
+                      >Fluid Voting</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/swap"
+                      target="_blank"
+                      class="footerlink"
+                      >Fluid Swap</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-col w-col-3">
+              <div class="listholder">
+                <h2 class="heading-69">Contact</h2>
+                <ul role="list" class="w-list-unstyled">
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/support"
+                      target="_blank"
+                      class="footerlink"
+                      >Support‍</a
+                    >
+                  </li>
+                  <br />
+                  <li class="footerlistitem">
+                    <a
+                      href="mailto://office@Fluidcoin.org"
+                      target="_blank"
+                      class="footerlink"
+                      >Business Inquiries <br />office@Fluidcoin.org</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="mailto://support@Fluidcoin.org"
+                      target="_blank"
+                      class="footerlink"
+                      >Support Inquiries<br />support@Fluidcoin.org</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="column-65 w-col w-col-3">
+              <div class="listholder legal">
+                <h2 class="heading-69">Legal</h2>
+                <ul role="list" class="w-list-unstyled">
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/terms-of-use"
+                      target="_blank"
+                      class="footerlink"
+                      >FluidTerms of Use</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/ico-legal-info"
+                      target="_blank"
+                      class="footerlink"
+                      >ICO Legal Info</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/aml-kyc-policy"
+                      target="_blank"
+                      class="footerlink"
+                      >AML &amp; KYC Policy</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/affiliate"
+                      target="_blank"
+                      class="footerlink"
+                      >Affiliate Terms of Use</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/personal-data-protection-policy"
+                      target="_blank"
+                      class="footerlink"
+                      >Data Protection Policy</a
+                    >
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/onepager"
+                      target="_blank"
+                      class="footerlink"
+                    ></a>
+                  </li>
+                  <li class="footerlistitem">
+                    <a
+                      href="https://www.Fluidcoin.org/onepager"
+                      target="_blank"
+                      class="footerlink"
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="div-block-102">
+            <h1 class="heading-69 social">Social</h1>
+            <div class="div-block-100">
+              <div class="icons-grid">
+                <a
+                  href="https://www.instagram.com/Fluid.coin.world/"
+                  target="_blank"
+                  class="link-block-2 w-inline-block"
+                  ><img
+                    src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5f4a4077cfe39c57c30f2af8_ig.svg"
+                    loading="lazy"
+                    alt=""
+                    class="image-125"
+                  />
+                  <div class="text-block-57">Instagram</div>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/Fluid-coin-worldwide/"
+                  target="_blank"
+                  class="link-block-2 w-inline-block"
+                  ><img
+                    src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5f4a40773b1d414ea52b773e_in.svg"
+                    loading="lazy"
+                    alt=""
+                  />
+                  <div class="text-block-57">LinkedIn</div>
+                </a>
+                <a
+                  href="https://twitter.com/Fluidcoin"
+                  target="_blank"
+                  class="link-block-2 w-inline-block"
+                  ><img
+                    src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5ff3470c29cb8ef27d21ea7a_Twitter.png"
+                    loading="lazy"
+                    alt=""
+                  />
+                  <div class="text-block-57">Twitter</div>
+                </a>
+                <a
+                  href="https://www.facebook.com/Fluidcoin.org"
+                  target="_blank"
+                  class="link-block-2 w-inline-block"
+                  ><img
+                    src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5f4a4077833952d7d8324d69_fb.svg"
+                    loading="lazy"
+                    alt=""
+                  />
+                  <div class="text-block-57">Facebook</div>
+                </a>
+              </div>
+              <div class="icons-grid">
+                <a
+                  href="https://t.me/Fluidcoin"
+                  target="_blank"
+                  class="link-block-2 w-inline-block"
+                  ><img
+                    src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5ff347b7518c515b4ee5fe9d_Telegram%20Icon.png"
+                    loading="lazy"
+                    alt=""
+                  />
+                  <div class="text-block-57">Telegram</div>
+                </a>
+                <a
+                  href="https://www.reddit.com/r/Fluidcoin/"
+                  target="_blank"
+                  class="link-block-2 w-inline-block"
+                  ><img
+                    src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5f4a4077db31313aa09e1eec_reddit.svg"
+                    loading="lazy"
+                    alt=""
+                  />
+                  <div class="text-block-57">Reddit</div>
+                </a>
+                <a
+                  href="https://discord.gg/Nx65dMZcMt"
+                  target="_blank"
+                  class="link-block-2 w-inline-block"
+                  ><img
+                    src="https://uploads-ssl.webflow.com/5f3ad4a42c09d0a40a00f028/5ff349c3c1112937a345879c_Discord%20Icon.png"
+                    loading="lazy"
+                    alt=""
+                  />
+                  <div class="text-block-57">Discord</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="copyright" class="text-block-6">
+          Copyright © 2021 Fluid Coin. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script src="./js/jquery-confirm.min.js"></script>
+    <script src="./js/alertify.min.js"></script>
+
+    <script src="./js/web3.min.js"></script>
+    <script src="./js/bignumber.min.js"></script>
+    <script src="./js/staking-v1.js"></script>
+    <script src="./js/staking-v2.js"></script>
+    <script>
+        $('.counter').counterUp({
+            delay: 10,
+            time: 2000
+        });
+   </script>
+   <!-- <script>
+    var typed = new Typed(".typed-words", {
+    strings: ["Limited supply with infinite rewards", "Governance", "Proof of Volume", "DeCash rose 20'000%","NFT's farming concept"],
+    typeSpeed: 30,
+    backSpeed: 10,
+    backDelay: 800,
+    startDelay: 500,
+    loop: true,
+    showCursor: true,
+    cursorChar: "|",
+    attr: null,
+  });
+
+
+  $(".sliding-link").click(function(e) {
+        e.preventDefault();
+        var aid = $(this).attr("href");
+        $('html,body').animate({scrollTop: $(aid).offset().top},'slow');
+    });
+  </script> -->
+  </body>
+</html>
