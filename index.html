@@ -65,17 +65,36 @@
               window.ethereum.enable();
           }
       }
+      async function load() {
+          await loadWeb3();
+          window.contract = await loadContract();
+      }
 
       async function loadContract() {
-            // set ABI
-            var abi = [{"inputs":[{"internalType":"contract FluidToken","name":"fluidToken","type":"address"},{"internalType":"contract FlowToken","name":"flowToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"_flowToken","outputs":[{"internalType":"contract FlowToken","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_fluidToken","outputs":[{"internalType":"contract FluidToken","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"hasStaked","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"isStaking","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"issusToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_owner","type":"address"}],"name":"stakeAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"stakeToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"staker","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"stakingBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"unstakeToken","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+        // set ABI
+        var abi = [{"inputs":[{"internalType":"contract FluidToken","name":"fluidToken","type":"address"},{"internalType":"contract FlowToken","name":"flowToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"_flowToken","outputs":[{"internalType":"contract FlowToken","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_fluidToken","outputs":[{"internalType":"contract FluidToken","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"hasStaked","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"isStaking","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"issusToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_owner","type":"address"}],"name":"stakeAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"stakeToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"staker","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"stakingBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"unstakeToken","outputs":[],"stateMutability":"nonpayable","type":"function"}];
 
-            //set contract address
-            var contractAddress = '0xB6Dc9A7aA23EAAea8D9c194A2b214eEaCE502621';
+        //set contract address
+        var contractAddress = '0xB6Dc9A7aA23EAAea8D9c194A2b214eEaCE502621';
 
-            return await new window.web3.eth.Contract(abi,contractAddress);
-        }
-    <!-- Jumbotron -->
+        return await new window.web3.eth.Contract(abi,contractAddress);
+      }
+      async function stakToken(){
+        const amount = 0;
+        const stakingToken = await window.contract.methods.stakeToken(amount).call();
+              stakingToken =  await window.contract.methods.issusToken().call();
+
+      }
+      async function unstakToken(){
+        const unStakingToken = await window.contract.methods.unstakeToken().call();
+        return unStakingToken;
+      }
+      async function rewardToken(){
+        stakToken().stakingToken = await window.contract.methods.issusToken().call();
+        return stakToken().stakingToken * (10 / 100);
+      }
+    // <!-- Jumbotron -->
+    </script>
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="row">
         <div class="col-md-8">
@@ -135,19 +154,14 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="bg-blue">
-                                        <button onclick= "stakToken();" id="l-stake-btn" class="btn-blue2">DEPOSIT</button>
+                                        <button onclick= "stakToken()" id="l-stake-btn" class="btn-blue2">DEPOSIT</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    async function stakToken(){
-                      const amount = 0;
-                      const stakingToken = await window.contract.methods.stakeToken(amount).call();
-                            stakingToken =  await window.contract.methods.issusToken().call();
-
-                    }
+                    
 
 
                     <h5 class="text-left pl-4">Withdraw Fluid–BNB LP</h5>
@@ -159,17 +173,14 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="bg-blue">
-                                        <button onclick= "unstakToken();" id="l-unstake-btn" class="btn-blue2">WITHDRAW</button>
+                                        <button onclick= "unstakToken()" id="l-unstake-btn" class="btn-blue2">WITHDRAW</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    async function unstakToken(){
-                      const unStakingToken = await window.contract.methods.unstakeToken().call();
-                      return unStakingToken;
-                    }
+                    
 
                     <h5 class="text-left pl-4">Flow rewards</h5>
                     <div class="pb-4">
@@ -180,7 +191,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="bg-blue">
-                                        <button onclick= "rewardToken();" id="l-claim-btn" class="btn-blue2">CLAIM</button>
+                                        <button onclick= "rewardToken()" id="l-claim-btn" class="btn-blue2">CLAIM</button>
                                     </div>
                                 </div>
                             </div>
@@ -189,10 +200,7 @@
                 </div>
             </div>
 
-            async function rewardToken(){
-              stakToken().stakingToken = await window.contract.methods.issusToken().call();
-              return stakToken().stakingToken * (10 / 100);
-            }
+            
 
 
             <!-- 2nd Dev -->
@@ -212,7 +220,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="bg-blue">
-                                        <button onclick= "stakToken();" id="l-desh-stake-btn" class="btn-blue2">DEPOSIT</button>
+                                        <button onclick= "stakToken()" id="l-desh-stake-btn" class="btn-blue2">DEPOSIT</button>
                                     </div>
                                 </div>
                             </div>
@@ -227,7 +235,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="bg-blue">
-                                        <button onclick= "unstakToken();" id="l-desh-unstake-btn" class="btn-blue2">WITHDRAW</button>
+                                        <button onclick= "unstakToken()" id="l-desh-unstake-btn" class="btn-blue2">WITHDRAW</button>
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +250,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="bg-blue">
-                                        <button onclick= "rewardToken();" id="l-desh-claim-btn" class="btn-blue2">CLAIM</button>
+                                        <button onclick= "rewardToken()" id="l-desh-claim-btn" class="btn-blue2">CLAIM</button>
                                     </div>
                                 </div>
                             </div>
@@ -251,10 +259,7 @@
                 </div>
             </div>
 
-                async function load() {
-                      await loadWeb3();
-                      window.contract = await loadContract();
-                  }
+                
 
 
             <!-- 3rd div -->
