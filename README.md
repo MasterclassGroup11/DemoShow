@@ -8,10 +8,9 @@
 - Yvonne Tansu : yvonne.tansu@gmail.com - GitHub Manager
 - Jalekun Oladiji : jalekunoladiji@gmail.com - Documentation Manager
 - Abdulazeez Muhammad Salihu : abdulazeezsalihu41@gmail.com - Contract Manager
-- femhabb@gmail.com - Contract Manager
-- oluokaren@gmail.com - UI Manager
-- donaldezebuiro@gmail.com - Video Manager
-
+- Oladiji (Jalex) : femhabb@gmail.com - Contract Manager
+- Karen Jimmy : oluokaren@gmail.com - UI Manager
+- Nonso Ezebuiro : donaldezebuiro@gmail.com - Video Manager
 
 Please do create a new branch and commit your changes there.
 
