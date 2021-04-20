@@ -3,7 +3,7 @@
 ## Farming and Staking project Group 11
 
 ### Team members and their roles
-- Okechukwu Ndunaka : wynasinfo@yahoo.com - Project Manager
+- Okechukwu Ndunaka : wynasinfo@yahoo.com - Project Manager and Group Leader
 - Oluseyi Ayinde : p.oluseyi@yahoo.com - UI/UX Manager
 - Yvonne Tansu : yvonne.tansu@gmail.com - GitHub Manager
 - Jalekun Oladiji : jalekunoladiji@gmail.com - Documentation Manager
