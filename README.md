@@ -12,6 +12,8 @@
 - Karen Jimmy : oluokaren@gmail.com - UI Manager
 - Nonso Ezebuiro : donaldezebuiro@gmail.com - Video Manager
 
+Testing
+
 Please do create a new branch and commit your changes there.
 
 We will review the code before merging it into `master`. 
