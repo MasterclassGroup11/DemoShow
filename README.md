@@ -21,9 +21,9 @@ We will review the code before merging it into `master`.
 Please read Github Workflow if you are new to Github:
 https://github.com/MasterclassGroup11/DemoShow/wiki/Github-Workflow
 
-<img src="https://res.cloudinary.com/rogong/image/upload/v1618513970/top-side.png" />
+<img src="https://res.cloudinary.com/rogong/image/upload/v1618902556/top.png" />
 
-<img src="https://res.cloudinary.com/rogong/image/upload/v1618513817/staking.png" />
+<img src="https://res.cloudinary.com/rogong/image/upload/v1618902540/staking2.png" />
 
 <img src="https://res.cloudinary.com/rogong/image/upload/v1618512180/team.png" />
 
